@@ -1,5 +1,5 @@
 # roll20-chatlog-stats
-Python notebook and dashboard for getting stats from roll20 rolls
+Python notebook and dashboard for getting stats from Roll20 D&D 5E rolls. 
 
 ![Dashboard Screenshot](https://www.robopenguins.com/assets/wp-content/uploads/2021/roll20/dashboard_thumb.webp)
 
@@ -16,7 +16,8 @@ source .env/bin/activate
 pip install -r requirements.txt 
 ```
 
-# Scraping With parsing_notebook.ipynb
+# 1) Scraping With parsing_notebook.ipynb
+Scraping is done with the library, [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/). This ipynb utilizes Roll20's CSS tagging to parse rolls, get their type, and assign a character to them.
 
 See <https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/> for a guide to getting started with notebooks.
 
@@ -24,12 +25,13 @@ The notebook takes an HTML file saved from a Roll20 message archive (See <https:
 
 `time,character,session,type,value`
 
-This is specifically tailored to a Pathfinder 2e game, and only looks at d20 rolls triggered from the character sheets.
+This is specifically tailored to a D&D 5e game, and only looks at 1d20 (with or without modifiers) rolls.
 
 This could easily be changed around by modifying the parsing if you were interested in rolls other then d20's or the exact type or content of the rolls.
 
-# Dashboaord
+Documentation on this TBA.
 
+# 2) Dashboard
 The dashboard is a Plotly dash application. This is a framework that creates a Flask app that gives an interactive view into the data.
 
 The one thing I hard coded that would need to be update is the `players` variable which is just to distinguish the player characters from the NPCs for grouping in the dashboard.
