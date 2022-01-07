@@ -10,13 +10,15 @@ import dash_bootstrap_components as dbc
 import plotly.express as px
 import pandas as pd
 
-df = pd.read_csv('data/cos_rolls.zip', parse_dates=['time'])
+df = pd.read_csv('data/chime_rolls.zip', parse_dates=['time'])
 
-with open('data/cos_sessions.txt', 'r') as fd:
+with open('data/chime_sessions.txt', 'r') as fd:
     sessions = [ line.strip() for line in fd.readlines() ]
 
-players = ['Thea', 'V', 'Ruvi', 'Cordelia', 'Sasha']
-NPC = "NPCs"
+players = ['Monti', 'Vye', 'Yev', 'Russel', 'Tithe',
+            'Genki', 'June/Auggie', 'Wing', 'Roll',
+            'Sebille', 'Dragonborn']
+NPC = 'NPCs'
 ALL_PLAYERS = 'PCs'
 df['character'] = df['character'].map(lambda x: x if x in players else NPC)
 players.append(NPC)
